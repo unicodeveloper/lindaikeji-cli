@@ -17,9 +17,9 @@ program
   .description('List Linda Ikeji Top Stories')
   .option('-n, --number <int>", "specify number of stories')
   .action(function(options){
-    var count = options.number || 20;
+    var count = (typeof options === 'object') ? 20 : options;
+    console.log("List top " + count + " Linda Ikeji Stories");
     list.top(count);
-    console.log("List top ten Linda Ikeji Stories");
   });
 
 
