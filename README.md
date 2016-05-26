@@ -5,7 +5,7 @@ Linda Ikeji for Men, HR Managers and Associates, Even Husbands that don't want t
 
 It helps you read awesome linda ikeji articles right in your terminal.
 
-![](http://i.imgur.com/nO3RyMT.gif)
+![](https://cloud.githubusercontent.com/assets/2946769/15586607/3dc86296-237d-11e6-8875-f859b37ee1a9.png)
 
 Installation
 ------------
