@@ -42,7 +42,7 @@ There are three commands available: `lindaikeji top`, `lindaikeji read`, `lindai
 
 List Linda Ikeji Top Stories
 
-`$ lindaikeji top -n 5`
+`$ lindaikeji top 5`
 
 List only top 5 Linda Ikeji Stories
 
