@@ -3,9 +3,9 @@
 
 var path    = require('path'),
     program = require('commander'),
-    list    = require('./lib/list'),
-    reader  = require('./lib/reader'),
-    op      = require('./lib/opener'),
+    list    = require('./factory/list'),
+    reader  = require('./factory/reader'),
+    op      = require('./factory/opener'),
     pkg     = require(path.join(__dirname, 'package.json'));
 
 program
