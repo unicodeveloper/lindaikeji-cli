@@ -1,13 +1,29 @@
 {
   "name": "lindaikeji",
   "version": "1.0.0",
-  "description": "Read linda Ikeji Blog Secretly",
+  "description": "Read linda Ikeji Blog Stories Secretly From Your Terminal",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Prosper Otemuyiwa <prosperotemuyiwa@gmail.com>",
+  "homepage": "https://github.com/unicodeveloper/lindaikeji-cli#readme",
+  "keywords": [
+    "cli",
+    "linda",
+    "ikeji",
+    "linda ikeji",
+    "blog",
+    "blogger",
+    "nigerian",
+    "nigeria",
+    "gossip",
+    "news"
+  ],
   "license": "MIT",
+  "bin": {
+    "lindaikeji": "index.js"
+  },
   "dependencies": {
     "commander": "^2.9.0",
     "path": "^0.12.7"
