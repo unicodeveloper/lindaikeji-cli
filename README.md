@@ -1,4 +1,4 @@
-lindaikeji-cli [![npm version](https://badge.fury.io/js/lindaikejicli.svg)](https://www.npmjs.com/package/lindaikejicli) [![npm](https://img.shields.io/npm/dt/lindaikejicli.svg)](https://www.npmjs.com/package/lindaikejicli)
+lindaikeji-cli [![npm version](https://badge.fury.io/js/lindaikeji.svg)](https://www.npmjs.com/package/lindaikeji) [![npm](https://img.shields.io/npm/dt/lindaikeji.svg)](https://www.npmjs.com/package/lindaikeji)
 ==========
 
 Linda Ikeji for Men, HR Managers and Associates, Even Husbands that don't want to be caught opening the website on their browsers. - A CLI for reading [Linda Ikeji's Blog](http://www.lindaikejisblog.com) Stories.
