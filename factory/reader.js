@@ -50,7 +50,8 @@ function parseContent(html) {
       }
 
       authors.forEach(function (value, index, array) {
-        var text = "${index + 1}) ${authors[index]} @ ${time[index]} said:\n${body[index]}\n";
+        index++;
+        var text = " " + index + ") " + authors[index] + " @ " + time[index] + " said: " + body[index] + "\n";
         comments.push(text);
       });
 
