@@ -5,11 +5,11 @@ var request = require('request'),
     fs = require('fs'),
     Q = require('q');
 
-var BLOGGER_HOST = 'https://www.blogger.com/feeds/9174986572743472561/posts/default?alt=json';
+var BLOGGER_HOST = 'https://www.blogger.com/feeds/9174986572743472561/posts/default?alt=json&max-results=';
 
 // Fetches data from linda Ikeji's blog
-function fetchTopStories(cb) {
-  request(BLOGGER_HOST, function (err, res) {
+function fetchTopStories(count, cb) {
+  request(BLOGGER_HOST + count, function (err, res) {
     if (!err && res.statusCode == 200) {
       var data = JSON.parse(res.body);
       cb(data);
@@ -17,16 +17,12 @@ function fetchTopStories(cb) {
   });
 }
 
-function getContent(cb) {
-  fetchTopStories(cb);
-}
-
 // Pre processing all the data from the platform
-function processContent(data, count) {
+function processContent(data) {
   var entries = data.feed.entry,
       stories = [];
 
-  for (var i = 0, len = Math.min(count, entries.length); i < len; i++) {
+  for (var i = 0; i < entries.length; i++) {
     var item = entries[i],
         postTitle = item.title.$t,
         content   = item.content.$t,
@@ -51,11 +47,11 @@ function processContent(data, count) {
 function getTrending(count) {
   var deferred = Q.defer();
 
-  getContent(function (res) {
+  fetchTopStories(count, function (res) {
     if (!res) {
       return deferred.reject();
     }
-    var posts = processContent(res, count);
+    var posts = processContent(res);
       deferred.resolve(posts);
   });
 
