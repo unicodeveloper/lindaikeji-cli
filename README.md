@@ -14,7 +14,7 @@ It helps you read awesome Linda Ikeji articles right in your terminal.
 
 ## Docs
 ----
-    Usage: medium [options] [command]
+    Usage: lindaikeji [options] [command]
 
     Commands:
 
