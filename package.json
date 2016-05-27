@@ -21,7 +21,7 @@
     "news"
   ],
   "engines": {
-    "node": ">=0.12.6"
+    "node": ">=0.12.4"
   },
   "license": "MIT",
   "bin": {
