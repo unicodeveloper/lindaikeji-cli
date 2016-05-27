@@ -22,12 +22,12 @@ function parseContent(html) {
   var $ = cheerio.load(html),
       articleMarkup = $('.post-outer div.post.hentry').html(),
       content = getTextFromHtml(articleMarkup);
-      
+
       //@dfasoro added this.
       var comments = [], authors = [], body = [], time = [];
       var commentsNode = $('#comments');
       comments.push($('H4', commentsNode).first().text());
-      
+
       try {
         $('#comments-block DT.comment-author', commentsNode).each(function () {
           var authorText = $(this).text().trim();
@@ -48,12 +48,12 @@ function parseContent(html) {
         //any yawa that gas should not make the original post not to show up right?
         console.log("Oops!, Something went wrong. Please try again");
       }
-      
+
       authors.forEach(function (value, index, array) {
-        var text = `${index + 1}) ${authors[index]} @ ${time[index]} said:\n${body[index]}\n`;
+        var text = "${index + 1}) ${authors[index]} @ ${time[index]} said:\n${body[index]}\n";
         comments.push(text);
       });
-      
+
   return content + "\n\n" + comments.join("\n");
 }
 
