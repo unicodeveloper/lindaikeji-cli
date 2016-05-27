@@ -46,7 +46,7 @@ function parseContent(html) {
       }
       catch (parseException) {
         //any yawa that gas should not make the original post not to show up right?
-        console.log(parseException)
+        console.log("Oops!, Something went wrong. Please try again");
       }
       
       authors.forEach(function (value, index, array) {
