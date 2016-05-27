@@ -20,6 +20,9 @@
     "gossip",
     "news"
   ],
+  "engines": {
+    "node": ">=0.12.6"
+  },
   "license": "MIT",
   "bin": {
     "lindaikeji": "index.js"
