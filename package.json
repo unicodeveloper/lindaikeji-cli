@@ -1,6 +1,6 @@
 {
   "name": "lindaikeji",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Read linda Ikeji Blog Stories Secretly From Your Terminal",
   "main": "index.js",
   "scripts": {
