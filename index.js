@@ -13,11 +13,10 @@ program
   .description(pkg.description);
 
 program
-  .command('top')
+  .command('top [articleCount]')
   .description('List Linda Ikeji Top Stories')
-  .option('-n, --number <int>", "specify number of stories')
-  .action(function(options) {
-    var count = parseInt(options) || 20;
+  .action(function(articleCount) {
+    var count = parseInt(articleCount) || 20;
 
     // Prevent negative values
     if (count < 0) {
@@ -48,6 +47,6 @@ program
 
 program.parse(process.argv);
 
-if (!process.argv.slice(2).length) {
+if (process.argv.length <= 2) {
   program.outputHelp();
 }
