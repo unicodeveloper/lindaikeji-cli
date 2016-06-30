@@ -16,8 +16,15 @@ program
   .command('top')
   .description('List Linda Ikeji Top Stories')
   .option('-n, --number <int>", "specify number of stories')
-  .action(function(options){
-    var count = isNaN(parseInt(options) || parseInt(options) == 0) ? 20 : options;
+  .action(function(options) {
+    var count = parseInt(options) || 20;
+
+    // Prevent negative values
+    if (count < 0) {
+      count = 20;
+    }
+
+    // Todo: consider using a logger, to enable setting the verbosity of the program
     console.log("List top " + count + " Linda Ikeji Stories");
     list.top(count);
   });
