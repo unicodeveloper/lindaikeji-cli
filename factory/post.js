@@ -3,7 +3,8 @@
 var request = require('request'),
     cheerio = require('cheerio'),
     fs = require('fs'),
-    Q = require('q');
+    Q = require('q'),
+    _ = require('lodash');
 
 var BLOGGER_HOST = 'https://www.blogger.com/feeds/9174986572743472561/posts/default?alt=json&max-results=';
 
@@ -26,7 +27,10 @@ function processContent(data) {
     var item = entries[i],
         postTitle = item.title.$t,
         content   = item.content.$t,
-        url       = item.link[4].href,
+        // Do not assume the link will always remain item 4 in the array
+        url       = _.filter(item.link, function (link) {
+          return link.rel === 'alternate' && link.type === 'text/html';
+        })[0].href,
         timePublished = item.published.$t,
         timeUpdated = item.updated.$t;
 
@@ -51,8 +55,8 @@ function getTrending(count) {
     if (!res) {
       return deferred.reject();
     }
-    var posts = processContent(res);
-      deferred.resolve(posts);
+
+    deferred.resolve(processContent(res));
   });
 
   return deferred.promise;
