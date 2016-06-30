@@ -1,8 +1,6 @@
 'use strict';
 
 var request = require('request'),
-    cheerio = require('cheerio'),
-    fs = require('fs'),
     Q = require('q'),
     _ = require('lodash');
 
