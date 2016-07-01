@@ -13,11 +13,15 @@ program
   .description(pkg.description);
 
 program
-  .command('top')
+  .command('top [articleCount]')
   .description('List Linda Ikeji Top Stories')
-  .option('-n, --number <int>", "specify number of stories')
-  .action(function(options){
-    var count = isNaN(parseInt(options) || parseInt(options) == 0) ? 20 : options;
+  .action(function(articleCount) {
+    var count = parseInt(articleCount) || 20;
+
+    // Prevent negative values
+    count = count < 0 ? 20 : count;
+
+    // Todo: consider using a logger, to enable setting the verbosity of the program
     console.log("List top " + count + " Linda Ikeji Stories");
     list.top(count);
   });
@@ -41,6 +45,6 @@ program
 
 program.parse(process.argv);
 
-if (!process.argv.slice(2).length) {
+if (process.argv.length <= 2) {
   program.outputHelp();
 }
