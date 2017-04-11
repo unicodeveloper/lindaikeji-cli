@@ -24,7 +24,7 @@ function processContent(data) {
   for (var i = 0; i < entries.length; i++) {
     var item = entries[i],
         postTitle = item.title.$t,
-        content   = item.content.$t,
+        summary   = item.summary.$t,
         // Do not assume the link will always remain item 4 in the array
         url       = _.filter(item.link, function (link) {
           return link.rel === 'alternate' && link.type === 'text/html';
@@ -35,7 +35,7 @@ function processContent(data) {
     var story = {
       url: url,
       headline: postTitle,
-      content: content,
+      summary: summary,
       timePublished: timePublished,
       timeUpdated: timeUpdated
     };
